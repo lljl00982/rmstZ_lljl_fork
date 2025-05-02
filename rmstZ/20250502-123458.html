@@ -1,0 +1,1216 @@
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>d1tools.com</title>
+	<style type="text/css">
+		
+[data-color-mode*='light'], [data-color-mode*='light'] body, .markdown-body[theme*='light'] {
+  --color-prettylights-syntax-comment: #6e7781;
+  --color-prettylights-syntax-constant: #0550ae;
+  --color-prettylights-syntax-entity: #8250df;
+  --color-prettylights-syntax-storage-modifier-import: #24292f;
+  --color-prettylights-syntax-entity-tag: #116329;
+  --color-prettylights-syntax-keyword: #cf222e;
+  --color-prettylights-syntax-string: #0a3069;
+  --color-prettylights-syntax-variable: #953800;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #82071e;
+  --color-prettylights-syntax-invalid-illegal-text: #f6f8fa;
+  --color-prettylights-syntax-invalid-illegal-bg: #82071e;
+  --color-prettylights-syntax-carriage-return-text: #f6f8fa;
+  --color-prettylights-syntax-carriage-return-bg: #cf222e;
+  --color-prettylights-syntax-string-regexp: #116329;
+  --color-prettylights-syntax-markup-list: #3b2300;
+  --color-prettylights-syntax-markup-heading: #0550ae;
+  --color-prettylights-syntax-markup-italic: #24292f;
+  --color-prettylights-syntax-markup-bold: #24292f;
+  --color-prettylights-syntax-markup-deleted-text: #82071e;
+  --color-prettylights-syntax-markup-deleted-bg: #FFEBE9;
+  --color-prettylights-syntax-markup-inserted-text: #116329;
+  --color-prettylights-syntax-markup-inserted-bg: #dafbe1;
+  --color-prettylights-syntax-markup-changed-text: #953800;
+  --color-prettylights-syntax-markup-changed-bg: #ffd8b5;
+  --color-prettylights-syntax-markup-ignored-text: #eaeef2;
+  --color-prettylights-syntax-markup-ignored-bg: #0550ae;
+  --color-prettylights-syntax-meta-diff-range: #8250df;
+  --color-prettylights-syntax-brackethighlighter-angle: #57606a;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
+  --color-prettylights-syntax-constant-other-reference-link: #0a3069;
+  --color-fg-default: #24292f;
+  --color-fg-muted: #57606a;
+  --color-fg-subtle: #6e7781;
+  --color-canvas-default: #ffffff;
+  --color-canvas-subtle: #f6f8fa;
+  --color-border-default: #d0d7de;
+  --color-border-muted: hsla(210,18%,87%,1);
+  --color-neutral-muted: rgba(175,184,193,0.2);
+  --color-accent-fg: #0969da;
+  --color-accent-emphasis: #0969da;
+  --color-attention-subtle: #fff8c5;
+  --color-danger-fg: #cf222e;
+}
+[data-color-mode*='dark'], [data-color-mode*='dark'] body, .markdown-body[theme*='dark'] {
+  --color-prettylights-syntax-comment: #8b949e;
+  --color-prettylights-syntax-constant: #79c0ff;
+  --color-prettylights-syntax-entity: #d2a8ff;
+  --color-prettylights-syntax-storage-modifier-import: #c9d1d9;
+  --color-prettylights-syntax-entity-tag: #7ee787;
+  --color-prettylights-syntax-keyword: #ff7b72;
+  --color-prettylights-syntax-string: #a5d6ff;
+  --color-prettylights-syntax-variable: #ffa657;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
+  --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
+  --color-prettylights-syntax-invalid-illegal-bg: #8e1519;
+  --color-prettylights-syntax-carriage-return-text: #f0f6fc;
+  --color-prettylights-syntax-carriage-return-bg: #b62324;
+  --color-prettylights-syntax-string-regexp: #7ee787;
+  --color-prettylights-syntax-markup-list: #f2cc60;
+  --color-prettylights-syntax-markup-heading: #1f6feb;
+  --color-prettylights-syntax-markup-italic: #c9d1d9;
+  --color-prettylights-syntax-markup-bold: #c9d1d9;
+  --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
+  --color-prettylights-syntax-markup-deleted-bg: #67060c;
+  --color-prettylights-syntax-markup-inserted-text: #aff5b4;
+  --color-prettylights-syntax-markup-inserted-bg: #033a16;
+  --color-prettylights-syntax-markup-changed-text: #ffdfb6;
+  --color-prettylights-syntax-markup-changed-bg: #5a1e02;
+  --color-prettylights-syntax-markup-ignored-text: #c9d1d9;
+  --color-prettylights-syntax-markup-ignored-bg: #1158c7;
+  --color-prettylights-syntax-meta-diff-range: #d2a8ff;
+  --color-prettylights-syntax-brackethighlighter-angle: #8b949e;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
+  --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
+  --color-fg-default: #c9d1d9;
+  --color-fg-muted: #8b949e;
+  --color-fg-subtle: #484f58;
+  --color-canvas-default: #0d1117;
+  --color-canvas-subtle: #161b22;
+  --color-border-default: #30363d;
+  --color-border-muted: #21262d;
+  --color-neutral-muted: rgba(110,118,129,0.4);
+  --color-accent-fg: #58a6ff;
+  --color-accent-emphasis: #1f6feb;
+  --color-attention-subtle: rgba(187,128,9,0.15);
+  --color-danger-fg: #f85149;
+}
+
+.markdown-body {
+  display: block;
+  -webkit-text-size-adjust: 100%;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  color: var(--color-fg-default);
+  background-color: var(--color-canvas-default);
+}
+
+.markdown-body details,
+.markdown-body figcaption,
+.markdown-body figure {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body [hidden] {
+  display: none !important;
+}
+
+.markdown-body a {
+  background-color: transparent;
+  color: var(--color-accent-fg);
+  text-decoration: none;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body abbr[title] {
+  border-bottom: none;
+  text-decoration: underline dotted;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body dfn {
+  font-style: italic;
+}
+
+.markdown-body h1 {
+  margin: .67em 0;
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 2em;
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.markdown-body mark {
+  background-color: var(--color-attention-subtle);
+  color: var(--color-text-primary);
+}
+
+.markdown-body small {
+  font-size: 90%;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body sup {
+  top: -0.5em;
+}
+
+.markdown-body img {
+  border-style: none;
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: var(--color-canvas-default);
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body figure {
+  margin: 1em 40px;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  overflow: hidden;
+  background: transparent;
+  border-bottom: 1px solid var(--color-border-muted);
+  height: .25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: var(--color-border-default);
+  border: 0;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body [type=button],
+.markdown-body [type=reset],
+.markdown-body [type=submit] {
+  -webkit-appearance: button;
+}
+
+.markdown-body [type=button]::-moz-focus-inner,
+.markdown-body [type=reset]::-moz-focus-inner,
+.markdown-body [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.markdown-body [type=button]:-moz-focusring,
+.markdown-body [type=reset]:-moz-focusring,
+.markdown-body [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+.markdown-body [type=checkbox],
+.markdown-body [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body [type=number]::-webkit-inner-spin-button,
+.markdown-body [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+.markdown-body [type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+.markdown-body [type=search]::-webkit-search-cancel-button,
+.markdown-body [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.markdown-body ::-webkit-input-placeholder {
+  color: inherit;
+  opacity: .54;
+}
+
+.markdown-body ::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body hr::before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body details:not([open])>*:not(summary) {
+  display: none !important;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  line-height: 10px;
+  color: var(--color-fg-default);
+  vertical-align: middle;
+  background-color: var(--color-canvas-subtle);
+  border: solid 1px var(--color-neutral-muted);
+  border-bottom-color: var(--color-neutral-muted);
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 var(--color-neutral-muted);
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.markdown-body h2 {
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.markdown-body h3 {
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-weight: 600;
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  font-weight: 600;
+  font-size: .85em;
+  color: var(--color-fg-muted);
+}
+
+.markdown-body p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+  padding: 0 1em;
+  color: var(--color-fg-muted);
+  border-left: .25em solid var(--color-border-default);
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body tt,
+.markdown-body code {
+  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  font-size: 12px;
+  word-wrap: normal;
+}
+
+.markdown-body .octicon {
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-body ::placeholder {
+  color: var(--color-fg-subtle);
+  opacity: 1;
+}
+
+.markdown-body input::-webkit-outer-spin-button,
+.markdown-body input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.markdown-body .token.comment, .markdown-body .token.prolog, .markdown-body .token.doctype, .markdown-body .token.cdata {
+  color: var(--color-prettylights-syntax-comment);
+}
+.markdown-body .token.namespace { opacity: 0.7; }
+.markdown-body .token.tag, .markdown-body .token.selector, .markdown-body .token.constant, .markdown-body .token.symbol, .markdown-body .token.deleted {
+  color: var(--color-prettylights-syntax-entity-tag);
+}
+.markdown-body .token.maybe-class-name {
+  color: var(--color-prettylights-syntax-variable);
+}
+.markdown-body .token.property-access, .markdown-body .token.operator, .markdown-body .token.boolean, .markdown-body .token.number, .markdown-body .token.selector .markdown-body .token.class, .markdown-body .token.attr-name, .markdown-body .token.string, .markdown-body .token.char, .markdown-body .token.builtin {
+  color: var(--color-prettylights-syntax-constant);
+}
+
+.markdown-body .token.deleted {
+  color: var(--color-prettylights-syntax-markup-deleted-text);
+}
+.markdown-body .token.property {
+  color: var(--color-prettylights-syntax-constant);
+}
+.markdown-body .token.punctuation {
+  color: var(--color-prettylights-syntax-markup-bold);
+}
+.markdown-body .token.function {
+  color: var(--color-prettylights-syntax-entity);
+}
+.markdown-body .code-line .token.deleted {
+  background-color: var(--color-prettylights-syntax-markup-deleted-bg);
+}
+.markdown-body .token.inserted {
+  color: var(--color-prettylights-syntax-markup-inserted-text);
+}
+.markdown-body .code-line .token.inserted {
+  background-color: var(--color-prettylights-syntax-markup-inserted-bg);
+}
+
+.markdown-body .token.variable {
+  color: var(--color-prettylights-syntax-constant);
+}
+.markdown-body .token.entity, .markdown-body .token.url, .language-css .markdown-body .token.string, .style .markdown-body .token.string {
+  color: var(--color-prettylights-syntax-string);
+}
+.markdown-body .token.color, .markdown-body .token.atrule, .markdown-body .token.attr-value, .markdown-body .token.function, .markdown-body .token.class-name {
+  color: var(--color-prettylights-syntax-string);
+}
+.markdown-body .token.rule, .markdown-body .token.regex, .markdown-body .token.important, .markdown-body .token.keyword {
+  color: var(--color-prettylights-syntax-keyword);
+}
+.markdown-body .token.coord {
+  color: var(--color-prettylights-syntax-meta-diff-range);
+}
+.markdown-body .token.important, .markdown-body .token.bold { font-weight: bold; }
+.markdown-body .token.italic { font-style: italic; }
+.markdown-body .token.entity { cursor: help; }
+
+.markdown-body [data-catalyst] {
+  display: block;
+}
+
+.markdown-body g-emoji {
+  font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1em;
+  font-style: normal !important;
+  font-weight: 400;
+  line-height: 1;
+  vertical-align: -0.075em;
+}
+
+.markdown-body g-emoji img {
+  width: 1em;
+  height: 1em;
+}
+
+.markdown-body::before {
+  display: table;
+  content: "";
+}
+
+.markdown-body::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .absent {
+  color: var(--color-danger-fg);
+}
+
+.markdown-body a.anchor {
+  float: left;
+  padding-right: 4px;
+  margin-left: -20px;
+  line-height: 1;
+}
+
+.markdown-body a.anchor:focus {
+  outline: none;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body details {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body sup>a::before {
+  content: "[";
+}
+
+.markdown-body sup>a::after {
+  content: "]";
+}
+
+.markdown-body .octicon-video {
+  border: 1px solid #d0d7de !important;
+  border-radius: 6px !important;
+  display: block;
+}
+
+.markdown-body .octicon-video summary {
+    border-bottom: 1px solid #d0d7de !important;
+    padding: 8px 16px !important;
+    cursor: pointer;
+}
+
+.markdown-body .octicon-video > video {
+    display: block !important;
+    max-width: 100% !important;
+    padding: 2px;
+    box-sizing: border-box;
+    border-bottom-right-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+}
+
+.markdown-body details.octicon-video:not([open])>*:not(summary) {
+    display: none !important;
+}
+
+.markdown-body details.octicon-video:not([open]) > summary {
+    border-bottom: 0 !important;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: var(--color-fg-default);
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 tt,
+.markdown-body h1 code,
+.markdown-body h2 tt,
+.markdown-body h2 code,
+.markdown-body h3 tt,
+.markdown-body h3 code,
+.markdown-body h4 tt,
+.markdown-body h4 code,
+.markdown-body h5 tt,
+.markdown-body h5 code,
+.markdown-body h6 tt,
+.markdown-body h6 code {
+  padding: 0 .2em;
+  font-size: inherit;
+}
+
+.markdown-body ul.no-list,
+.markdown-body ol.no-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.markdown-body ol[type="1"] {
+  list-style-type: decimal;
+}
+
+.markdown-body ol[type=a] {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body ol[type=i] {
+  list-style-type: lower-roman;
+}
+
+.markdown-body div>ol:not([type]) {
+  list-style-type: decimal;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid var(--color-border-default);
+}
+
+.markdown-body table tr {
+  background-color: var(--color-canvas-default);
+  border-top: 1px solid var(--color-border-muted);
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: var(--color-canvas-subtle);
+}
+
+.markdown-body table img {
+  background-color: transparent;
+  vertical-align: middle;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body .emoji {
+  max-width: none;
+  vertical-align: text-top;
+  background-color: transparent;
+}
+
+.markdown-body span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.markdown-body span.frame>span {
+  display: block;
+  float: left;
+  width: auto;
+  padding: 7px;
+  margin: 13px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--color-border-default);
+}
+
+.markdown-body span.frame span img {
+  display: block;
+  float: left;
+}
+
+.markdown-body span.frame span span {
+  display: block;
+  padding: 5px 0 0;
+  clear: both;
+  color: var(--color-fg-default);
+}
+
+.markdown-body span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.markdown-body span.align-center>span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.markdown-body span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.markdown-body span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.markdown-body span.align-right>span {
+  display: block;
+  margin: 13px 0 0;
+  overflow: hidden;
+  text-align: right;
+}
+
+.markdown-body span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.markdown-body span.float-left {
+  display: block;
+  float: left;
+  margin-right: 13px;
+  overflow: hidden;
+}
+
+.markdown-body span.float-left span {
+  margin: 13px 0 0;
+}
+
+.markdown-body span.float-right {
+  display: block;
+  float: right;
+  margin-left: 13px;
+  overflow: hidden;
+}
+
+.markdown-body span.float-right>span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: right;
+}
+
+.markdown-body code,
+.markdown-body tt {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: var(--color-neutral-muted);
+  border-radius: 6px;
+}
+
+.markdown-body code br,
+.markdown-body tt br {
+  display: none;
+}
+
+.markdown-body del code {
+  text-decoration: inherit;
+}
+
+.markdown-body pre code {
+  font-size: 100%;
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body pre {
+  position: relative;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: var(--color-canvas-subtle);
+  border-radius: 6px;
+}
+
+.markdown-body pre code,
+.markdown-body pre tt {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre > code {
+  padding: 16px;
+  overflow: auto;
+  display: block;
+}
+
+.markdown-body .csv-data td,
+.markdown-body .csv-data th {
+  padding: 5px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.markdown-body .csv-data .blob-num {
+  padding: 10px 8px 9px;
+  text-align: right;
+  background: var(--color-canvas-default);
+  border: 0;
+}
+
+.markdown-body .csv-data tr {
+  border-top: 0;
+}
+
+.markdown-body .csv-data th {
+  font-weight: 600;
+  background: var(--color-canvas-subtle);
+  border-top: 0;
+}
+
+.markdown-body .footnotes {
+  font-size: 12px;
+  color: var(--color-fg-muted);
+  border-top: 1px solid var(--color-border-default);
+}
+
+.markdown-body .footnotes ol {
+  padding-left: 16px;
+}
+
+.markdown-body .footnotes li {
+  position: relative;
+}
+
+.markdown-body .footnotes li:target::before {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -24px;
+  pointer-events: none;
+  content: "";
+  border: 2px solid var(--color-accent-emphasis);
+  border-radius: 6px;
+}
+
+.markdown-body .footnotes li:target {
+  color: var(--color-fg-default);
+}
+
+.markdown-body .footnotes .data-footnote-backref g-emoji {
+  font-family: monospace;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item label {
+  font-weight: 400;
+}
+
+.markdown-body .task-list-item.enabled label {
+  cursor: pointer;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item .handle {
+  display: none;
+}
+
+.markdown-body .task-list-item-checkbox,
+.markdown-body input[type="checkbox"] {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body .contains-task-list:dir(rtl) .task-list-item-checkbox,
+.markdown-body .contains-task-list:dir(rtl) input[type="checkbox"] {
+  margin: 0 -1.6em .25em .2em;
+}
+
+.markdown-body ::-webkit-calendar-picker-indicator {
+  filter: invert(50%);
+}
+body {padding: 2em;}
+	</style>
+  </head>
+  <body>
+  <div class="markdown-body">
+    <h1>rmstZ</h1>
+<blockquote>
+<p><em>TransData for Music Games</em></p>
+<p><a href="EARLYCODE.md">先行代码</a></p>
+<p><a href="WHATSNEW.md">更新历史</a></p>
+<p><a href="https://www.jianguoyun.com/p/DctV8o4Qitn5Bxi2x-AD">[N]测试资源</a></p>
+<p><a href="https://www.jianguoyun.com/p/DYDEAR4Qitn5BxjwtYMD">[N]播放示例</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">类别</th><th align="center">简介</th></tr></thead><tbody><tr><td align="center">重要功能「音游转谱」</td><td align="center">支持多种音游和模拟器的谱面读入与写出及资源提取或转换。<br>（可结合丰富的转换选项满足个性化需求）</td></tr><tr><td align="center">核心功能「音波采谱」</td><td align="center">分析音频波形进行谱面要素采集，结果以音键谱面形式体现。<br>（保存后需要谱师发挥才能进行创作加工）</td></tr><tr><td align="center">精华功能「音键作谱」</td><td align="center">根据插件型定制脚本所设定的规则，对音键进行自动化作谱。<br>（敬请期待）</td></tr></tbody></table>
+</blockquote>
+<h2>功能介绍</h2>
+<blockquote>
+<p>当前具备对谱面文件、曲谱文件、音频文件、图片文件、包文件、编码文件和其他文件进行相关操作的功能。</p>
+<ul>
+<li><strong>谱面文件</strong></li>
+</ul>
+<p>　支持以下文件的读入☆，部分支持附选项的写出★：</p>
+<ol>
+<li>☆<strong>vos</strong>（「Virtual Orchestra Studio」、「CanMusic」谱面，包括000、001、006、022版本）；</li>
+<li>☆<strong>1</strong>（「Beatmania IIDX」谱面）；</li>
+<li>★<strong>bms</strong>、<strong>bme</strong>、<strong>bml</strong>（「Beatmania」系列模拟谱面，包括bm98、bms、ddr4、ddr6、bme、bme3、bme5、bme7、2dx键位）；</li>
+<li>★<strong>pms</strong>（「pop'n music」谱面，包括pms、pms3、pms5、pmse键位）；</li>
+<li>★<strong>dtx</strong>（「DTXMania」谱面，包括6键、9键鼓和5键、7键吉他、贝斯键位）；</li>
+<li>★<strong>msd</strong>（「Dance Dance Revolution」谱面）；</li>
+<li>☆<strong>ssq</strong>（「Dance Dance Revolution 4th Mix」谱面）；</li>
+<li>★<strong>sm</strong>、<strong>sma</strong>、<strong>ssc</strong>（「Step Mania」系列谱面）；</li>
+<li>☆<strong>sdf</strong>（「Pocket DDR」谱面）；</li>
+<li>★<strong>dwi</strong>（「Dance With Intensity」谱面）；</li>
+<li>☆<strong>pt</strong>（「DJMax」谱面）；</li>
+<li>★<strong>ksf</strong>（「Kick It Up」谱面）；</li>
+<li>★<strong>ucs</strong>（「Pump It Up」谱面）；</li>
+<li>★<strong>dance</strong>（「pydance」谱面）；</li>
+<li>★<strong>tja</strong>（「太鼓次郎」谱面，包括taiko、jube模式）；</li>
+<li>☆<strong>ojn</strong>（「<a href="http://www.o2jam.com/">O2Jam</a>」谱面）；</li>
+<li>★<strong>osu</strong>（「<a href="https://osu.ppy.sh/">osu!</a>」谱面，包括osu、taiko、ctb、mania模式）；</li>
+<li>★<strong>xml</strong>（「R2beat」谱面）；</li>
+<li>★<strong>xml</strong>（「<a href="http://yd2012.redatoms.com/">乐动达人</a>」谱面）；</li>
+<li>★<strong>xml</strong>（「<a href="http://www.ydsd.com/">乐动时代</a>」谱面）；</li>
+<li>★<strong>xml</strong>（「<a href="http://da.qq.com/">节奏大师</a>」谱面，星动模式）；</li>
+<li>★<strong>xml</strong>（「<a href="http://dynamix.c4-cat.com/">Dynamix</a>」谱面）；</li>
+<li>★<strong>xml</strong>（「<a href="https://x5m.qq.com/">QQ炫舞手游</a>」谱面，包括星动模式、弦月模式、弹珠模式、传统模式、泡泡模式）;</li>
+<li>★<strong>vox</strong>（「SOUND VOLTEX」谱面）；</li>
+<li>★<strong>ksh</strong>（「K-Shoot Mania」谱面）；</li>
+<li>★<strong>imd</strong>（「<a href="http://da.qq.com/">节奏大师</a>」谱面，经典模式）；</li>
+<li>★<strong>mde</strong>（「<a href="http://da.qq.com/">节奏大师</a>」谱面，星动模式）；</li>
+<li>★<strong>txt</strong>（「Cytus」谱面，包含原版和Version2）；</li>
+<li>★<strong>txt</strong>（「Cytus2」谱面）；</li>
+<li>★<strong>txt</strong>（「Musync」谱面，包括明文和加密）；</li>
+<li>★<strong>txt</strong>（「<a href="https://bang-dream.com/">BanG Dream!</a>」谱面）；</li>
+<li>★<strong>txt</strong>（「O2Jam - Music &amp; Game」谱面）；</li>
+<li>★<strong>json</strong>（「Deemo」谱面）；</li>
+<li>★<strong>json</strong>（「节奏大师微信小程序」、「Project FX」、「不休的音符」谱面）；</li>
+<li>★<strong>mc</strong>（「<a href="http://m.mugzone.net/">Malody</a>」谱面，包括key、step、dj、catch、pad、taiko、ring、slide模式）；</li>
+<li>★<strong>aff</strong>（「<a href="https://arcaea.lowiro.com/">Arcaea</a>」谱面）；</li>
+<li>★<strong>drb</strong>（「DanceRail」谱面）；</li>
+<li>★<strong>mmg</strong>（「不休的音符」官方自制谱面工具谱面）。</li>
+</ol>
+<p>　支持以下风格的谱面绘制，含有音频可实现简易的谱面播放，包括背景音和按键音：</p>
+<ol>
+<li>
+<p><strong>bms</strong>（「Beat Mania」风格）；</p>
+</li>
+<li>
+<p><strong>tja</strong>（「太鼓次郎」风格）；</p>
+</li>
+<li>
+<p><strong>osu</strong>（「<a href="https://osu.ppy.sh/">osu!</a>」风格）；</p>
+</li>
+<li>
+<p><strong>imd</strong>（「<a href="http://da.qq.com/">节奏大师</a>」风格）；</p>
+</li>
+<li>
+<p><strong>mc</strong>（「<a href="http://m.mugzone.net/">Malody</a>」风格）；</p>
+</li>
+<li>
+<p><strong>aff</strong>（「<a href="https://arcaea.lowiro.com/">Arcaea</a>」风格）；</p>
+</li>
+<li>
+<p><strong>txt</strong>（「<a href="https://bang-dream.com/">BanG Dream!</a>」风格）。</p>
+</li>
+</ol>
+<ul>
+<li><strong>曲谱文件</strong></li>
+</ul>
+<p>　支持以下文件的谱面转换：</p>
+<ol>
+<li>
+<p><strong>mid</strong>。</p>
+</li>
+</ol>
+<ul>
+<li><strong>音频文件</strong></li>
+</ul>
+<p>　支持以下文件的波形分析、曲谱采集、定制作谱：</p>
+<ol>
+<li>
+<p><strong>wav</strong>；</p>
+</li>
+<li>
+<p><strong>ogg</strong>；</p>
+</li>
+<li>
+<p><strong>mp3</strong>；</p>
+</li>
+<li>
+<p><strong>aac</strong>；</p>
+</li>
+<li>
+<p><strong>m4a</strong>；</p>
+</li>
+<li>
+<p><strong>m4r</strong>。</p>
+</li>
+</ol>
+<ul>
+<li><strong>图片文件</strong></li>
+</ul>
+<p>　支持以下文件指定尺寸缩放：</p>
+<ol>
+<li>
+<p><strong>bmp</strong>（支持32位透明通道）；</p>
+</li>
+<li>
+<p><strong>jpg</strong>；</p>
+</li>
+<li>
+<p><strong>gif</strong>；</p>
+</li>
+<li>
+<p><strong>png</strong>。</p>
+</li>
+</ol>
+<ul>
+<li><strong>包文件</strong></li>
+</ul>
+<p>　支持以下文件的资源提取：</p>
+<ol>
+<li>
+<p><strong>zip</strong>、<strong>apk</strong>、<strong>ipa</strong>、<strong>osz</strong>、<strong>mcz</strong>（Deflate压缩文件）；</p>
+</li>
+<li>
+<p><strong>dz</strong>（Marmalade资源包）；</p>
+</li>
+<li>
+<p><strong>cpk</strong>（Criware资源包）；</p>
+</li>
+<li>
+<p><strong>acb</strong>（Criware Atom分轨库）；</p>
+</li>
+<li>
+<p><strong>acf</strong>（Criware Atom配置包）；</p>
+</li>
+<li>
+<p><strong>awb</strong>（Criware Atom波形库）；</p>
+</li>
+<li>
+<p><strong>adx</strong>（Criware Atom音频）；</p>
+</li>
+<li>
+<p><strong>hca</strong>（Criware Atom音频）；</p>
+</li>
+<li>
+<p><strong>wsb</strong>（XACT声音库）；</p>
+</li>
+<li>
+<p><strong>xwb</strong>（XACT波形库）；</p>
+</li>
+<li>
+<p><strong>2dx</strong>（「BeatmaniaIIDX」资源包）；</p>
+</li>
+<li>
+<p><strong>s3p</strong>（「Sound Voltex」音频包）；</p>
+</li>
+<li>
+<p><strong>s3v</strong>（「Sound Voltex」音频）；</p>
+</li>
+<li>
+<p><strong>ojm</strong>（「<a href="http://www.o2jam.com/">O2Jam</a>」资源文件，包括OJM、OMC编码）；</p>
+</li>
+<li>
+<p><strong>pak</strong>（「R2Beat」音频包）；</p>
+</li>
+<li>
+<p><strong>r2n</strong>（「R2Beat」谱面包）；</p>
+</li>
+<li>
+<p><strong>bin</strong>（「节奏大师微信小程序」配置文件集）。</p>
+</li>
+</ol>
+<ul>
+<li><strong>编码文件</strong></li>
+</ul>
+<p>　支持以下文件的编码转换：</p>
+<ol>
+<li>
+<p><strong>hex</strong>（十六进制文本文件）；</p>
+</li>
+<li>
+<p><strong>base64</strong>（base64编码文件）。</p>
+</li>
+</ol>
+<ul>
+<li><strong>其他文件</strong></li>
+</ul>
+<p>　支持以下文件的数据转换：</p>
+<ol>
+<li><strong>bin</strong>（「<a href="http://da.qq.com/">节奏大师</a>」配置文件）；</li>
+<li><strong>bin</strong>（「节奏大师微信小程序」配置文件）。</li>
+</ol>
+</blockquote>
+  </div>
+  </body>
+</html>

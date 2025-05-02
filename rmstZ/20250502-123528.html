@@ -1,0 +1,1991 @@
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>d1tools.com</title>
+	<style type="text/css">
+		
+[data-color-mode*='light'], [data-color-mode*='light'] body, .markdown-body[theme*='light'] {
+  --color-prettylights-syntax-comment: #6e7781;
+  --color-prettylights-syntax-constant: #0550ae;
+  --color-prettylights-syntax-entity: #8250df;
+  --color-prettylights-syntax-storage-modifier-import: #24292f;
+  --color-prettylights-syntax-entity-tag: #116329;
+  --color-prettylights-syntax-keyword: #cf222e;
+  --color-prettylights-syntax-string: #0a3069;
+  --color-prettylights-syntax-variable: #953800;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #82071e;
+  --color-prettylights-syntax-invalid-illegal-text: #f6f8fa;
+  --color-prettylights-syntax-invalid-illegal-bg: #82071e;
+  --color-prettylights-syntax-carriage-return-text: #f6f8fa;
+  --color-prettylights-syntax-carriage-return-bg: #cf222e;
+  --color-prettylights-syntax-string-regexp: #116329;
+  --color-prettylights-syntax-markup-list: #3b2300;
+  --color-prettylights-syntax-markup-heading: #0550ae;
+  --color-prettylights-syntax-markup-italic: #24292f;
+  --color-prettylights-syntax-markup-bold: #24292f;
+  --color-prettylights-syntax-markup-deleted-text: #82071e;
+  --color-prettylights-syntax-markup-deleted-bg: #FFEBE9;
+  --color-prettylights-syntax-markup-inserted-text: #116329;
+  --color-prettylights-syntax-markup-inserted-bg: #dafbe1;
+  --color-prettylights-syntax-markup-changed-text: #953800;
+  --color-prettylights-syntax-markup-changed-bg: #ffd8b5;
+  --color-prettylights-syntax-markup-ignored-text: #eaeef2;
+  --color-prettylights-syntax-markup-ignored-bg: #0550ae;
+  --color-prettylights-syntax-meta-diff-range: #8250df;
+  --color-prettylights-syntax-brackethighlighter-angle: #57606a;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
+  --color-prettylights-syntax-constant-other-reference-link: #0a3069;
+  --color-fg-default: #24292f;
+  --color-fg-muted: #57606a;
+  --color-fg-subtle: #6e7781;
+  --color-canvas-default: #ffffff;
+  --color-canvas-subtle: #f6f8fa;
+  --color-border-default: #d0d7de;
+  --color-border-muted: hsla(210,18%,87%,1);
+  --color-neutral-muted: rgba(175,184,193,0.2);
+  --color-accent-fg: #0969da;
+  --color-accent-emphasis: #0969da;
+  --color-attention-subtle: #fff8c5;
+  --color-danger-fg: #cf222e;
+}
+[data-color-mode*='dark'], [data-color-mode*='dark'] body, .markdown-body[theme*='dark'] {
+  --color-prettylights-syntax-comment: #8b949e;
+  --color-prettylights-syntax-constant: #79c0ff;
+  --color-prettylights-syntax-entity: #d2a8ff;
+  --color-prettylights-syntax-storage-modifier-import: #c9d1d9;
+  --color-prettylights-syntax-entity-tag: #7ee787;
+  --color-prettylights-syntax-keyword: #ff7b72;
+  --color-prettylights-syntax-string: #a5d6ff;
+  --color-prettylights-syntax-variable: #ffa657;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
+  --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
+  --color-prettylights-syntax-invalid-illegal-bg: #8e1519;
+  --color-prettylights-syntax-carriage-return-text: #f0f6fc;
+  --color-prettylights-syntax-carriage-return-bg: #b62324;
+  --color-prettylights-syntax-string-regexp: #7ee787;
+  --color-prettylights-syntax-markup-list: #f2cc60;
+  --color-prettylights-syntax-markup-heading: #1f6feb;
+  --color-prettylights-syntax-markup-italic: #c9d1d9;
+  --color-prettylights-syntax-markup-bold: #c9d1d9;
+  --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
+  --color-prettylights-syntax-markup-deleted-bg: #67060c;
+  --color-prettylights-syntax-markup-inserted-text: #aff5b4;
+  --color-prettylights-syntax-markup-inserted-bg: #033a16;
+  --color-prettylights-syntax-markup-changed-text: #ffdfb6;
+  --color-prettylights-syntax-markup-changed-bg: #5a1e02;
+  --color-prettylights-syntax-markup-ignored-text: #c9d1d9;
+  --color-prettylights-syntax-markup-ignored-bg: #1158c7;
+  --color-prettylights-syntax-meta-diff-range: #d2a8ff;
+  --color-prettylights-syntax-brackethighlighter-angle: #8b949e;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
+  --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
+  --color-fg-default: #c9d1d9;
+  --color-fg-muted: #8b949e;
+  --color-fg-subtle: #484f58;
+  --color-canvas-default: #0d1117;
+  --color-canvas-subtle: #161b22;
+  --color-border-default: #30363d;
+  --color-border-muted: #21262d;
+  --color-neutral-muted: rgba(110,118,129,0.4);
+  --color-accent-fg: #58a6ff;
+  --color-accent-emphasis: #1f6feb;
+  --color-attention-subtle: rgba(187,128,9,0.15);
+  --color-danger-fg: #f85149;
+}
+
+.markdown-body {
+  display: block;
+  -webkit-text-size-adjust: 100%;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  color: var(--color-fg-default);
+  background-color: var(--color-canvas-default);
+}
+
+.markdown-body details,
+.markdown-body figcaption,
+.markdown-body figure {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body [hidden] {
+  display: none !important;
+}
+
+.markdown-body a {
+  background-color: transparent;
+  color: var(--color-accent-fg);
+  text-decoration: none;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body abbr[title] {
+  border-bottom: none;
+  text-decoration: underline dotted;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body dfn {
+  font-style: italic;
+}
+
+.markdown-body h1 {
+  margin: .67em 0;
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 2em;
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.markdown-body mark {
+  background-color: var(--color-attention-subtle);
+  color: var(--color-text-primary);
+}
+
+.markdown-body small {
+  font-size: 90%;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body sup {
+  top: -0.5em;
+}
+
+.markdown-body img {
+  border-style: none;
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: var(--color-canvas-default);
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body figure {
+  margin: 1em 40px;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  overflow: hidden;
+  background: transparent;
+  border-bottom: 1px solid var(--color-border-muted);
+  height: .25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: var(--color-border-default);
+  border: 0;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body [type=button],
+.markdown-body [type=reset],
+.markdown-body [type=submit] {
+  -webkit-appearance: button;
+}
+
+.markdown-body [type=button]::-moz-focus-inner,
+.markdown-body [type=reset]::-moz-focus-inner,
+.markdown-body [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.markdown-body [type=button]:-moz-focusring,
+.markdown-body [type=reset]:-moz-focusring,
+.markdown-body [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+.markdown-body [type=checkbox],
+.markdown-body [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body [type=number]::-webkit-inner-spin-button,
+.markdown-body [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+.markdown-body [type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+.markdown-body [type=search]::-webkit-search-cancel-button,
+.markdown-body [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.markdown-body ::-webkit-input-placeholder {
+  color: inherit;
+  opacity: .54;
+}
+
+.markdown-body ::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body hr::before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body details:not([open])>*:not(summary) {
+  display: none !important;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  line-height: 10px;
+  color: var(--color-fg-default);
+  vertical-align: middle;
+  background-color: var(--color-canvas-subtle);
+  border: solid 1px var(--color-neutral-muted);
+  border-bottom-color: var(--color-neutral-muted);
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 var(--color-neutral-muted);
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.markdown-body h2 {
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.markdown-body h3 {
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-weight: 600;
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  font-weight: 600;
+  font-size: .85em;
+  color: var(--color-fg-muted);
+}
+
+.markdown-body p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+  padding: 0 1em;
+  color: var(--color-fg-muted);
+  border-left: .25em solid var(--color-border-default);
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body tt,
+.markdown-body code {
+  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  font-size: 12px;
+  word-wrap: normal;
+}
+
+.markdown-body .octicon {
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-body ::placeholder {
+  color: var(--color-fg-subtle);
+  opacity: 1;
+}
+
+.markdown-body input::-webkit-outer-spin-button,
+.markdown-body input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.markdown-body .token.comment, .markdown-body .token.prolog, .markdown-body .token.doctype, .markdown-body .token.cdata {
+  color: var(--color-prettylights-syntax-comment);
+}
+.markdown-body .token.namespace { opacity: 0.7; }
+.markdown-body .token.tag, .markdown-body .token.selector, .markdown-body .token.constant, .markdown-body .token.symbol, .markdown-body .token.deleted {
+  color: var(--color-prettylights-syntax-entity-tag);
+}
+.markdown-body .token.maybe-class-name {
+  color: var(--color-prettylights-syntax-variable);
+}
+.markdown-body .token.property-access, .markdown-body .token.operator, .markdown-body .token.boolean, .markdown-body .token.number, .markdown-body .token.selector .markdown-body .token.class, .markdown-body .token.attr-name, .markdown-body .token.string, .markdown-body .token.char, .markdown-body .token.builtin {
+  color: var(--color-prettylights-syntax-constant);
+}
+
+.markdown-body .token.deleted {
+  color: var(--color-prettylights-syntax-markup-deleted-text);
+}
+.markdown-body .token.property {
+  color: var(--color-prettylights-syntax-constant);
+}
+.markdown-body .token.punctuation {
+  color: var(--color-prettylights-syntax-markup-bold);
+}
+.markdown-body .token.function {
+  color: var(--color-prettylights-syntax-entity);
+}
+.markdown-body .code-line .token.deleted {
+  background-color: var(--color-prettylights-syntax-markup-deleted-bg);
+}
+.markdown-body .token.inserted {
+  color: var(--color-prettylights-syntax-markup-inserted-text);
+}
+.markdown-body .code-line .token.inserted {
+  background-color: var(--color-prettylights-syntax-markup-inserted-bg);
+}
+
+.markdown-body .token.variable {
+  color: var(--color-prettylights-syntax-constant);
+}
+.markdown-body .token.entity, .markdown-body .token.url, .language-css .markdown-body .token.string, .style .markdown-body .token.string {
+  color: var(--color-prettylights-syntax-string);
+}
+.markdown-body .token.color, .markdown-body .token.atrule, .markdown-body .token.attr-value, .markdown-body .token.function, .markdown-body .token.class-name {
+  color: var(--color-prettylights-syntax-string);
+}
+.markdown-body .token.rule, .markdown-body .token.regex, .markdown-body .token.important, .markdown-body .token.keyword {
+  color: var(--color-prettylights-syntax-keyword);
+}
+.markdown-body .token.coord {
+  color: var(--color-prettylights-syntax-meta-diff-range);
+}
+.markdown-body .token.important, .markdown-body .token.bold { font-weight: bold; }
+.markdown-body .token.italic { font-style: italic; }
+.markdown-body .token.entity { cursor: help; }
+
+.markdown-body [data-catalyst] {
+  display: block;
+}
+
+.markdown-body g-emoji {
+  font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1em;
+  font-style: normal !important;
+  font-weight: 400;
+  line-height: 1;
+  vertical-align: -0.075em;
+}
+
+.markdown-body g-emoji img {
+  width: 1em;
+  height: 1em;
+}
+
+.markdown-body::before {
+  display: table;
+  content: "";
+}
+
+.markdown-body::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .absent {
+  color: var(--color-danger-fg);
+}
+
+.markdown-body a.anchor {
+  float: left;
+  padding-right: 4px;
+  margin-left: -20px;
+  line-height: 1;
+}
+
+.markdown-body a.anchor:focus {
+  outline: none;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body details {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body sup>a::before {
+  content: "[";
+}
+
+.markdown-body sup>a::after {
+  content: "]";
+}
+
+.markdown-body .octicon-video {
+  border: 1px solid #d0d7de !important;
+  border-radius: 6px !important;
+  display: block;
+}
+
+.markdown-body .octicon-video summary {
+    border-bottom: 1px solid #d0d7de !important;
+    padding: 8px 16px !important;
+    cursor: pointer;
+}
+
+.markdown-body .octicon-video > video {
+    display: block !important;
+    max-width: 100% !important;
+    padding: 2px;
+    box-sizing: border-box;
+    border-bottom-right-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+}
+
+.markdown-body details.octicon-video:not([open])>*:not(summary) {
+    display: none !important;
+}
+
+.markdown-body details.octicon-video:not([open]) > summary {
+    border-bottom: 0 !important;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: var(--color-fg-default);
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 tt,
+.markdown-body h1 code,
+.markdown-body h2 tt,
+.markdown-body h2 code,
+.markdown-body h3 tt,
+.markdown-body h3 code,
+.markdown-body h4 tt,
+.markdown-body h4 code,
+.markdown-body h5 tt,
+.markdown-body h5 code,
+.markdown-body h6 tt,
+.markdown-body h6 code {
+  padding: 0 .2em;
+  font-size: inherit;
+}
+
+.markdown-body ul.no-list,
+.markdown-body ol.no-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.markdown-body ol[type="1"] {
+  list-style-type: decimal;
+}
+
+.markdown-body ol[type=a] {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body ol[type=i] {
+  list-style-type: lower-roman;
+}
+
+.markdown-body div>ol:not([type]) {
+  list-style-type: decimal;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid var(--color-border-default);
+}
+
+.markdown-body table tr {
+  background-color: var(--color-canvas-default);
+  border-top: 1px solid var(--color-border-muted);
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: var(--color-canvas-subtle);
+}
+
+.markdown-body table img {
+  background-color: transparent;
+  vertical-align: middle;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body .emoji {
+  max-width: none;
+  vertical-align: text-top;
+  background-color: transparent;
+}
+
+.markdown-body span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.markdown-body span.frame>span {
+  display: block;
+  float: left;
+  width: auto;
+  padding: 7px;
+  margin: 13px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--color-border-default);
+}
+
+.markdown-body span.frame span img {
+  display: block;
+  float: left;
+}
+
+.markdown-body span.frame span span {
+  display: block;
+  padding: 5px 0 0;
+  clear: both;
+  color: var(--color-fg-default);
+}
+
+.markdown-body span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.markdown-body span.align-center>span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.markdown-body span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.markdown-body span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.markdown-body span.align-right>span {
+  display: block;
+  margin: 13px 0 0;
+  overflow: hidden;
+  text-align: right;
+}
+
+.markdown-body span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.markdown-body span.float-left {
+  display: block;
+  float: left;
+  margin-right: 13px;
+  overflow: hidden;
+}
+
+.markdown-body span.float-left span {
+  margin: 13px 0 0;
+}
+
+.markdown-body span.float-right {
+  display: block;
+  float: right;
+  margin-left: 13px;
+  overflow: hidden;
+}
+
+.markdown-body span.float-right>span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: right;
+}
+
+.markdown-body code,
+.markdown-body tt {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: var(--color-neutral-muted);
+  border-radius: 6px;
+}
+
+.markdown-body code br,
+.markdown-body tt br {
+  display: none;
+}
+
+.markdown-body del code {
+  text-decoration: inherit;
+}
+
+.markdown-body pre code {
+  font-size: 100%;
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body pre {
+  position: relative;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: var(--color-canvas-subtle);
+  border-radius: 6px;
+}
+
+.markdown-body pre code,
+.markdown-body pre tt {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre > code {
+  padding: 16px;
+  overflow: auto;
+  display: block;
+}
+
+.markdown-body .csv-data td,
+.markdown-body .csv-data th {
+  padding: 5px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.markdown-body .csv-data .blob-num {
+  padding: 10px 8px 9px;
+  text-align: right;
+  background: var(--color-canvas-default);
+  border: 0;
+}
+
+.markdown-body .csv-data tr {
+  border-top: 0;
+}
+
+.markdown-body .csv-data th {
+  font-weight: 600;
+  background: var(--color-canvas-subtle);
+  border-top: 0;
+}
+
+.markdown-body .footnotes {
+  font-size: 12px;
+  color: var(--color-fg-muted);
+  border-top: 1px solid var(--color-border-default);
+}
+
+.markdown-body .footnotes ol {
+  padding-left: 16px;
+}
+
+.markdown-body .footnotes li {
+  position: relative;
+}
+
+.markdown-body .footnotes li:target::before {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -24px;
+  pointer-events: none;
+  content: "";
+  border: 2px solid var(--color-accent-emphasis);
+  border-radius: 6px;
+}
+
+.markdown-body .footnotes li:target {
+  color: var(--color-fg-default);
+}
+
+.markdown-body .footnotes .data-footnote-backref g-emoji {
+  font-family: monospace;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item label {
+  font-weight: 400;
+}
+
+.markdown-body .task-list-item.enabled label {
+  cursor: pointer;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item .handle {
+  display: none;
+}
+
+.markdown-body .task-list-item-checkbox,
+.markdown-body input[type="checkbox"] {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body .contains-task-list:dir(rtl) .task-list-item-checkbox,
+.markdown-body .contains-task-list:dir(rtl) input[type="checkbox"] {
+  margin: 0 -1.6em .25em .2em;
+}
+
+.markdown-body ::-webkit-calendar-picker-indicator {
+  filter: invert(50%);
+}
+body {padding: 2em;}
+	</style>
+  </head>
+  <body>
+  <div class="markdown-body">
+    <h1>rmstZ</h1>
+<blockquote>
+<p><em>TransData for Music Games</em></p>
+<p><a href="EARLYCODE.md">先行代码</a></p>
+<p><a href="README.md">功能介绍</a></p>
+<p><a href="https://www.jianguoyun.com/p/DctV8o4Qitn5Bxi2x-AD">[N]测试资源</a></p>
+<p><a href="https://www.jianguoyun.com/p/DYDEAR4Qitn5BxjwtYMD">[N]播放示例</a></p>
+</blockquote>
+<h2>更新历史</h2>
+<blockquote>
+<p>　<a href="https://www.jianguoyun.com/p/DaETRlEQitn5Bxi_nLAC">[N]阶段代码</a></p>
+<ul>
+<li>。</li>
+</ul>
+<hr>
+<p>　<a href="https://www.jianguoyun.com/p/DcRuoCEQitn5BxiunYYD">[N]测试版本</a></p>
+<p>　【<a href="rmstZ_20221022.html">rmstZ_20221022.html</a>】</p>
+<ul>
+<li>修复xml（qqx5）按键时间偏差的问题；</li>
+<li>修复读取谱面后的读取记录不显示的问题；</li>
+<li>读入vox尝试以CP932, CP936的编码读取文本；</li>
+<li>修复读取vox节拍数据出错的问题；</li>
+<li>对vox连续分隔符进行容错；</li>
+<li>支持vox的旋钮tilt参数；</li>
+<li>统一ksh、vox、aff的竖轴坐标；</li>
+<li>增加支持vox（「Sound Voltex」谱面）的写出；</li>
+<li>重构对aff破界坐标的支持；</li>
+<li>增加支持aff的timinggroup的anglex、angley参数；</li>
+<li>修复写aff时对非流时段按键计算出错的问题；</li>
+<li>修复数字计算的类型问题；</li>
+<li>增加支持mmg（「不休的音符」官方自制谱面工具谱面）的读写；</li>
+<li>写出imd时对坐标点进行除错优化；</li>
+<li>修复tja谱面分歧读入出错的问题；</li>
+<li>优化对tja的SCOREINIT参数支持；</li>
+<li>优化写出bms、tja、ksh等谱面的精度；</li>
+<li>修复转mc时可能出现漏键的问题；</li>
+<li>修复转mc时音频扩展名不再强制为ogg；</li>
+<li>按下Control键时切换url参数文件流读入开关，默认为关；</li>
+<li>增加打开文件过大时的错误提示；</li>
+<li>Control键和Shift键的开关操作在使用组合键时不予相应；</li>
+<li>增加读入js插件后的信息标签；</li>
+<li>可一次加载多个插件；</li>
+<li>加载插件后显示已加载插件列表；</li>
+<li>加载插件不影响当前操作；</li>
+<li>可从插件列表快捷加载当前路径下的插件；</li>
+<li>修复从剪贴板读入文件出错的问题；</li>
+<li>修复拖拽结果读入文件出错的问题。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20220113.html">rmstZ_20220113.html</a>】</p>
+<ul>
+<li>修复更改流速时节拍数据出错的问题；</li>
+<li>增加支持ksh（「K-Shoot Mania」谱面）的写出；</li>
+<li>读入ksh时如有负BPM识别为时停；</li>
+<li>优化读入ksh的按键坐标；</li>
+<li>写出aff时虹弧优先取色蓝、红，有同时虹弧才取色绿。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20211225.html">rmstZ_20211225.html</a>】</p>
+<ul>
+<li>修复读入文件后索引选项值不实际保留的问题；</li>
+<li>修复写出wav标识错误的问题；</li>
+<li>写出bms系、dtx、bangdream谱面WAV数超过1295上限时不予写入；</li>
+<li>增加支持s3p（「Sound Voltex」音频包）的读入；</li>
+<li>增加支持s3v（「Sound Voltex」音频）的读入；</li>
+<li>增加支持1（「Beatmania IIDX」谱面）的读入；</li>
+<li>从包读取文件支持筛选格式进行数据转换。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20211222.html">rmstZ_20211222.html</a>】</p>
+<ul>
+<li>修复读取zip文件名乱码的问题；</li>
+<li>修复单长键谱面对长折线键型转换遗漏的问题；</li>
+<li>修复无键数谱面读取出错的问题；</li>
+<li>修复初始键数选项不为谱面键数的问题；</li>
+<li>修复读入musync的LongNoteSub遗漏键音的问题；</li>
+<li>修复写出musync的LongNoteSub遗漏LongNote行的问题；</li>
+<li>读写musync支持4K谱面；</li>
+<li>写出bms支持同时间多个背景音；</li>
+<li>单谱面文件不再标注分谱面序号；</li>
+<li>增加支持pak（「R2beat」音频包）的读入；</li>
+<li>增加支持r2n（「R2beat」谱面包）的读入；</li>
+<li>增加支持xml（「R2beat」谱面）的读写；</li>
+<li>优化写出单键谱面的长条类型；</li>
+<li>字符解码失败时以Unicode编码代替；</li>
+<li>图片裁剪缩放功能新增*.bmp（256×128）；</li>
+<li>图片裁剪缩放修正<em>_base.jpg（500×500）为</em>_base.jpg（512×512）；</li>
+<li>图片裁剪缩放予以分组。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20211011.html">rmstZ_20211011.html</a>】</p>
+<ul>
+<li>增加信息标签，文件读取、失效、不支持时予以信息显示；</li>
+<li>优化最初加载时的显示逻辑；</li>
+<li>优化写出wav、zip文件的性能；</li>
+<li>修复文件追加后读取记录消失的问题；</li>
+<li>切换显示预览开关实时生效；</li>
+<li>显示预览开关可通过长按标题实现；</li>
+<li>优化url参数帮助、显示、检查文本的显示方式；</li>
+<li>修改部分url参数的语法；</li>
+<li>增加部分url参数；</li>
+<li>url参数读入多文件文件流时，非首文件以追加方式读入；</li>
+<li>支持以url参数的语法保存文件流读入、模块读入、选项操作的状态，将文件放在同目录下生效，通过长按文件选择器以显示或隐藏该功能按钮；</li>
+<li>为保证性能，保存文件流、模块超过50MB时不予记录，首文件流不予记录时，追加文件亦不予记录；</li>
+<li>修复初始节拍数据缺失时的数据计算问题；</li>
+<li>修复读入vos时vos022版本的数据读入问题；</li>
+<li>修复读入mid时FF事件3处缺乏支持的问题；</li>
+<li>读入vos增加支持vow扩展名；</li>
+<li>调整支持编码CP932（7890字符）、CP936（22047字符）、CP949（17304字符）、CP950（13759字符）；</li>
+<li>读入bms、tja尝试以CP932, CP936的编码读取文本；</li>
+<li>读入ojn以CP949的编码读取文本；</li>
+<li>优化读入ojn文本的方式；</li>
+<li>修复读入ojn时初始bpm指定错误的问题；</li>
+<li>修复读ksh时激光条错误的问题；</li>
+<li>读ksh完善对其他参数的支持。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20210717.html">rmstZ_20210717.html</a>】</p>
+<ul>
+<li>修复读入某些谱面将分谱面读为子谱面的问题；</li>
+<li>修复读入txt（「O2Jam - Music &amp; Game」谱面）空值导致错误的问题；</li>
+<li>读入谱面后可通过添加资源功能追加谱面；</li>
+<li>增加支持txt（「O2Jam - Music &amp; Game」谱面）的写出。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20210701.html">rmstZ_20210701.html</a>】</p>
+<ul>
+<li>读入imd、mde、aff增加封面、背景图信息；</li>
+<li>修复url参数对多谱面转谱选项无效的问题；</li>
+<li>新增“隐键扩展”、“虚键扩展”、“伪键扩展”、“雷键扩展”选项；</li>
+<li>新增“流速扩展”、“变换扩展”选项；</li>
+<li>增加读入谱面时的指定数据组件；</li>
+<li>增加支持txt（「O2Jam - Music &amp; Game」谱面）的读入。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20210530.html">rmstZ_20210530.html</a>】</p>
+<ul>
+<li>更改进阶选项计算逻辑；</li>
+<li>选项增加“修复”分组；</li>
+<li>修复读入osu时长键时长计算错误的问题;</li>
+<li>修复写出osu时滑键起始坐标错误的问题;</li>
+<li>修复写出osu时进阶选项重复计算的问题;</li>
+<li>读入aff时蓝、红弧外的弧线识别为绿弧；</li>
+<li>读入aff时空点时间超出虚弧视为有效；</li>
+<li>修复读入aff长条相接时可能造成无限循环的问题；</li>
+<li>修复写出aff时0时弧线丢失的问题；</li>
+<li>写aff不再排除同时同色弧线；</li>
+<li>写aff保留原始的弧色标记；</li>
+<li>修复读入txt（「BanG Dream!」）谱面绘图风格没有默认为txt的问题；</li>
+<li>移除“虚键扩展”、“流速扩展”、“变换扩展”选项；</li>
+<li>新增“隐键销除”、“伪键销除”、“雷键销除”选项；</li>
+<li>完善noinput全局互转配套代码。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20210528.html">rmstZ_20210528.html</a>】</p>
+<ul>
+<li>移除无用的ser读取功能；</li>
+<li>谱面数据加工时尽可能保留原始时间数据；</li>
+<li>增强imd读取的容错性；</li>
+<li>写出imd时其他谱面的flick键型转为滑键；</li>
+<li>修复pms部分键位轨道计算错误的问题；</li>
+<li>改进写出osu时的节拍数据；</li>
+<li>修复写出aff拍速错误的问题；</li>
+<li>读写aff的scenecontrol增加支持redline、arcahvdebris、arcahvdistort、hidegroup；</li>
+<li>读写aff支持timinggroup，包括noinput，识别为多个子谱面，并优化和其他谱面的互转；</li>
+<li>写出aff不再移除时停区间的按键；</li>
+<li>修复读入txt（「BanG Dream!」）默认音频文件名错误的问题；</li>
+<li>支持txt（「BanG Dream!」）的小数BPM；</li>
+<li>部分谱面限制最高BPM；</li>
+<li>修复保存文件名的难度后缀出错的问题；</li>
+<li>修复谱面绘图部分键型尺寸与比例不协调的问题；</li>
+<li>修复谱面绘图bms风格键位不准确的问题；</li>
+<li>修复谱面绘图osu风格按键缺失的问题；</li>
+<li>谱面绘图增加txt风格（「BanG Dream!」）；</li>
+<li>谱面绘图淡化判定点的绘制；</li>
+<li>谱面绘图支持多子谱面绘制；</li>
+<li>优化谱面绘图aff风格时停区段的连击数计算；</li>
+<li>优化谱面绘图时退区段的连击数计算；</li>
+<li>优化谱面绘图流程，大幅提高性能；</li>
+<li>变更谱面加工流程；</li>
+<li>取消轨道计算时对两轨中间位置的智能判定；</li>
+<li>谱面进阶选项新增“无时退”、“无时停”；</li>
+<li>优化“无斜键”、“无滑键”选项；</li>
+<li>取消“无交键”、“无叉键”选项；</li>
+<li>新增“横轨无冲”、“纵轨无冲”、“竖轨无冲”，用以销除相应轨道的冲突按键；</li>
+<li>新增“横轴无交”、“纵轴无交”、“竖轴无交”，用以销除相应轴心的交叉按键；</li>
+<li>“键数转换”、"轨道编辑"、“镜面”、“乱轨”、“乱音”功能同时作用于横纵竖三向。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20200505.html">rmstZ_20200505.html</a>】</p>
+<ul>
+<li>修复写出xml（qqx5）时部分整数值可能为小数导致谱面出错的问题；</li>
+<li>修复写出mde时BPM为0的问题；</li>
+<li>修复写出aff时空点转化错误的问题；</li>
+<li>修复读入aff时时间戳不精确的问题；</li>
+<li>变更aff坐标值取值范围；</li>
+<li>读写aff支持camera和scenecontrol语法；</li>
+<li>根据音键计算节拍时计算首节拍偏移；</li>
+<li>支持通过文件选择器手动加载js插件；</li>
+<li>谱面绘图绘制背景音限制宽度；</li>
+<li>谱面绘图绘制时间域、频率域时加成音量；</li>
+<li>谱面绘图选项增加“效果音”、“状态值”、“变换值”；</li>
+<li>切换显示预览开关时增加标题颜色区分；</li>
+<li>增加支持txt（「BanG Dream!」谱面）的读写。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20200403.html">rmstZ_20200403.html</a>】</p>
+<ul>
+<li>修复写sm系谱面默认METER值为空的问题；</li>
+<li>修复aff音频偏移计算错误的问题；</li>
+<li>修复连续流速变换出错的问题；</li>
+<li>增加对xml转义字符的支持；</li>
+<li>优化谱面写出时拍速和流速的计算；</li>
+<li>优化附带音频时谱面绘图绘制频谱的性能；</li>
+<li>谱面绘图选项增加“时间域”、“频率域”；</li>
+<li>修复谱面绘图简易谱面播放的一些问题；</li>
+<li>优化谱面绘图简易谱面播放的性能；</li>
+<li>谱面绘图简易谱面播放支持音量设定；</li>
+<li>统一文件路径斜杠的转换。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20200313.html">rmstZ_20200313.html</a>】</p>
+<ul>
+<li>修复键数选择无效的问题；</li>
+<li>修复写aff时的几处错误；</li>
+<li>调整读取谱面时拍速至流速的转化；</li>
+<li>优化对负时间数据的起始计算；</li>
+<li>谱面绘图绘制aff风格空点、虹弧及阴影辅以透明度；</li>
+<li>谱面绘图绘制音频频谱增加时间偏移；</li>
+<li>谱面绘图绘制音频频谱辅以颜色标识；</li>
+<li>谱面绘图导出html时如有相应音频则附带简易的谱面播放功能；</li>
+<li>谱面绘图导出html适配移动端；</li>
+<li>读取谱面后可直接或从zip包中添加支持的音频、图像资源，通过长按文件选择器以显示或隐藏该功能按钮；</li>
+<li>可直接打开保存结果，等效于将“保存”按钮拖拽到文件选择器，通过长按文件选择器以显示或隐藏该功能按钮。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20200227.html">rmstZ_20200227.html</a>】</p>
+<ul>
+<li>修复写bms节拍数据遗失的问题；</li>
+<li>修复写bms标签数据起始索引错误的问题；</li>
+<li>谱面绘图虚键不计“动作”数；</li>
+<li>优化对xml格式的读入；</li>
+<li>增加支持xml（「Dynamix」谱面）的读写；</li>
+<li>增加支持xml（「QQ炫舞手游」谱面，星动模式）的读写；</li>
+<li>增加支持xml（「QQ炫舞手游」谱面，弦月模式）的读写；</li>
+<li>增加支持xml（「QQ炫舞手游」谱面，弹珠模式）的读写；</li>
+<li>增加支持xml（「QQ炫舞手游」谱面，传统模式）的读写；</li>
+<li>增加支持xml（「QQ炫舞手游」谱面，泡泡模式）的读写；</li>
+<li>增加支持drb（「DanceRail」谱面）的读写；</li>
+<li>增加支持UCS-2编码文本的读写；</li>
+<li>增加支持UTF-16编码文本的读写；</li>
+<li>增加支持dtx（「DTXMania」谱面，包括6键、9键鼓和5键、7键吉他、贝斯键位）的读写；</li>
+<li>转换选项支持增添、移除无键轨道。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20200116.html">rmstZ_20200116.html</a>】</p>
+<ul>
+<li>优化对读取不支持文件的容错处理；</li>
+<li>读取32位bmp时支持保留透明度；</li>
+<li>增加支持dz（Marmalade资源包）的读取；</li>
+<li>增加支持wsb（XACT声音包）的读取；</li>
+<li>增加支持wxb（XACT波形包）的读取；</li>
+<li>增加支持adx（Criware Atom音频）的读取；</li>
+<li>增加支持hca（Criware Atom音频）的读取；</li>
+<li>读取awb时如有awbKey则予以显示；</li>
+<li>增加支持ssq（「Dance Dance Revolution 4th Mix」谱面）的读入；</li>
+<li>增加加载外部插件功能。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20200104.html">rmstZ_20200104.html</a>】</p>
+<ul>
+<li>修正aff变速和高速BPM判定计算；</li>
+<li>优化谱面绘图尾部节拍线的绘制；</li>
+<li>增加支持json（「节奏大师微信小程序」谱面）的读写；</li>
+<li>支持bin（「节奏大师微信小程序」配置文件）的数据转换，包括以下29种；</li>
+<li>　activityconvertitem_info_c.bin</li>
+<li>　ad_info_c.bin</li>
+<li>　assistantitem_info_c.bin</li>
+<li>　dailychallengeaward_info_c.bin</li>
+<li>　framepic_info_c.bin</li>
+<li>　freediamond_info_c.bin</li>
+<li>　gameskin_info_c.bin</li>
+<li>　instrumentlist_info_c.bin</li>
+<li>　instrumentmission_info_c.bin</li>
+<li>　instrumentskinlist_info_c.bin</li>
+<li>　instrumentstar_info_c.bin</li>
+<li>　itemlist_info_c.bin</li>
+<li>　localization_info_c.bin</li>
+<li>　playerexplist_info_c.bin</li>
+<li>　questlist_info_c.bin</li>
+<li>　rankingrm_info_c.bin</li>
+<li>　settingtype_info_c.bin</li>
+<li>　share_info_c.bin</li>
+<li>　shopandroid_info_c.bin</li>
+<li>　songfilterrm_info_c.bin</li>
+<li>　songlistrm_info_c.bin</li>
+<li>　soundeffect_info_c.bin</li>
+<li>　stagepassdesc_info_c.bin</li>
+<li>　stagerm_info_c.bin</li>
+<li>　stageskip_info_c.bin</li>
+<li>　story_info_c.bin</li>
+<li>　strings_info_c.bin</li>
+<li>　systemtiprm_info_c.bin</li>
+<li>　tabledatas.bin；</li>
+<li>优化bin导出list、bat的「节奏大师」资源增量下载功能，并改为谱面、音频、图像三部分独立进行，同时增加支持「节奏大师微信小程序」，通过读取songlistrm_info_c.bin实现。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20191231.html">rmstZ_20191231.html</a>】</p>
+<ul>
+<li>增加支持cpk（Criware资源包）的读取；</li>
+<li>增加支持acb（Criware Atom分轨库）的读取；</li>
+<li>增加支持acf（Criware Atom配置包）的读取；</li>
+<li>增加支持awb（Criware Atom波形库）的读取；</li>
+<li>谱面绘图绘制谱面标题限制宽度；</li>
+<li>优化谱面绘图默认风格的判断逻辑；</li>
+<li>优化写aff时虹弧的同时同色冲突；</li>
+<li>增强对文件名的智能识别；</li>
+<li>包文件提取增加以非压缩zip保存全部文件的功能；</li>
+<li>增加支持txt（「Cytus」谱面，包含原版和Version2）的读写；</li>
+<li>增加支持txt（「Cytus2」谱面）的读写；</li>
+<li>增加支持txt（「Musync」谱面，包含明文和加密）的读写；</li>
+<li>增加支持json（「Deemo」谱面）的读写；</li>
+<li>优化根据时间戳计算变速BPM的功能。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20191124.html">rmstZ_20191124.html</a>】</p>
+<ul>
+<li>优化写入sm系谱面元数据默认值;</li>
+<li>重构bms系谱面02通道的读写;</li>
+<li>写入osu时支持时停；</li>
+<li>修复谱面绘图bms风格节拍数据缺失的问题；</li>
+<li>优化对谱面长度的计算；</li>
+<li>完善与虚键相关的配置；</li>
+<li>读取imd时限制bpm最小为1；</li>
+<li>增加支持msd（「Dance Dance Revolution」谱面）的读写；</li>
+<li>增加支持dwi（「Dance With Intensity」谱面）的读写；</li>
+<li>增加支持pt（「DJMax」谱面）的读入；</li>
+<li>增加支持vos（「Virtual Orchestra Studio」、「CanMusic」谱面）的读入；</li>
+<li>增加支持mid的读入并生成谱面；</li>
+<li>增强轨道计算时中点的交叉计算。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20191101.html">rmstZ_20191101.html</a>】</p>
+<ul>
+<li>修复写入sm、sma、ssc谱面的一些问题；</li>
+<li>修复“锁键”无效的问题；</li>
+<li>修复键数转换无效的问题；</li>
+<li>修正读取bme键位识别错误的问题；</li>
+<li>修正读取bms系谱面LNOBJ长条计算错误的问题；</li>
+<li>修正节拍数据算法错误的问题；</li>
+<li>修正写入osu故事板事件遗漏的问题；</li>
+<li>支持mc的jump、showbar、hs、sign；</li>
+<li>增加支持sdf（「Pocket DDR」谱面）的读入；</li>
+<li>增加支持ksf（「Kick It Up」谱面）的读写；</li>
+<li>增加支持ucs（「Pump It Up」谱面）的读写；</li>
+<li>增加支持dance（「pydance」谱面）的读写；</li>
+<li>指定结果显示的默认字体；</li>
+<li>更改谱面绘图的默认字体；</li>
+<li>谱面绘图默认为aff风格；</li>
+<li>谱面绘图增加绘制小节线；</li>
+<li>谱面绘图扩充节拍数据的绘制内容；</li>
+<li>谱面绘图增加绘制音频文件名信息；</li>
+<li>谱面绘图选项移除“判定线”，增加“起止线”、“小节线”、“变拍数”、“背景音”；</li>
+<li>谱面绘图选项名称、位置调整。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20190919.html">rmstZ_20190919.html</a>】</p>
+<ul>
+<li>绘制谱面时间、节拍、音符数据与节拍线、判定线独立绘制；</li>
+<li>限制绘制谱面的最小宽度；</li>
+<li>调整转谱选项界面；</li>
+<li>多谱面转谱选项各自独立；</li>
+<li>修复转bms时的一些问题；</li>
+<li>修复读写tja双人谱面错误的问题；</li>
+<li>修复读取sm、sma、ssc谱面的一些错误；</li>
+<li>增加读取sm、sma、ssc谱面时的单双人识别；</li>
+<li>支持sm、sma、ssc谱面的写出。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20190726.html">rmstZ_20190726.html</a>】</p>
+<ul>
+<li>增加支持sm、sma、ssc（「StepMania」系列谱面）的读入；</li>
+<li>读取谱面后默认显示为读取记录；</li>
+<li>优化节拍数据转换效率。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20190719.html">rmstZ_20190719.html</a>】</p>
+<ul>
+<li>修复读取mde时冗余计算导致性能低下的问题；</li>
+<li>调整转aff时的键型策略；</li>
+<li>修正对aff判定计算错误的问题；</li>
+<li>修正转aff时虹弧样式错误的问题；</li>
+<li>支持aff的绿色虹弧；</li>
+<li>精确绘制aff虹弧上判定点的位置；</li>
+<li>优化绘制aff虹弧高度识别；</li>
+<li>增加绘制aff同时间单点与空点的连线；</li>
+<li>如未指定谱面绘制风格，谱面有对应绘制风格时默认指定；</li>
+<li>修复多谱面格式复数选择无效的问题；</li>
+<li>多谱面格式复数选择支持自定义顺序；</li>
+<li>多谱面格式转单谱面格式复数选择时，以顺序首位转换。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20190610.html">rmstZ_20190610.html</a>】</p>
+<ul>
+<li>修复读取aff出错的问题；</li>
+<li>修复读取mc出错的问题；</li>
+<li>修复bms按键类型识别错误的问题；</li>
+<li>修复bms按键布局排列错误的问题；</li>
+<li>修复保存mst节拍数据精简错误的问题；</li>
+<li>修复读取vox节拍数据错误的问题；</li>
+<li>支持mc非jump的scroll数据；</li>
+<li>改进bms、tja、osu、mc、aff的节拍数据读写；</li>
+<li>谱面绘图增加流速的绘制；</li>
+<li>完善谱面写入时对虚键等的过滤；</li>
+<li>修复读取osu节拍数据出错的问题；</li>
+<li>读写osu支持StoryBoard；</li>
+<li>增加支持mc（「Malody」谱面）slide模式的互转。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20181230.html">rmstZ_20181230.html</a>】</p>
+<ul>
+<li>多谱面格式支持复数选择；</li>
+<li>文件选择器的工具提示显示支持格式列表；</li>
+<li>各控件增加工具提示；</li>
+<li>重建数据结构，重构转谱代码，尽可能保留源谱面的数据；</li>
+<li>重新设计转换流程，提升性能；</li>
+<li>优化浮点数计算的精度问题；</li>
+<li>键数转换默认为4键；</li>
+<li>键数转换取消对无键轨道的去除；</li>
+<li>轨道计算时增加对两轨中间位置的智能判定；</li>
+<li>支持兼容BPM为零或负值；</li>
+<li>改进对imd节拍数据的读取；</li>
+<li>修正对imd长键的判定点计算；</li>
+<li>转imd时消除超过谱面时长的音符；</li>
+<li>转imd时默认对节拍数据进行压缩；</li>
+<li>转imd时起始节拍时间戳可能非零；</li>
+<li>转imd时跨轨斜键等比分割为非跨轨斜键；</li>
+<li>修正转xml(yddr、yddr)轨道可能错误的问题；</li>
+<li>转mde时取消延迟25毫秒；</li>
+<li>转mde时增加BPMList数据；</li>
+<li>修正对mde画布、镜头的位置及尺寸的计算错误；</li>
+<li>重新设计转mde时的镜头变换；</li>
+<li>完善转mde时的细节保留；</li>
+<li>读tja时保留正确的音频信息；</li>
+<li>转tja时优化多谱面信息的写入；</li>
+<li>读tja时支持GogoTime、Scroll、BarLine数据的保留；</li>
+<li>转tja时增加对多谱面按标识排序及同标识谱面的去重；</li>
+<li>转tja时支持双人谱面的写入；</li>
+<li>转tja时支持节拍中的变速；</li>
+<li>转tja时支持变拍数据；</li>
+<li>转aff时默认对空点进行连线；</li>
+<li>转aff时取消谱面根据音频偏移进行偏移；</li>
+<li>转aff时长度为0的非接连长、滑条转为空点；</li>
+<li>转aff时去除同一时间的同色虹弧；</li>
+<li>转aff时去除BPM为零或负值时的按键；</li>
+<li>转aff时不限制为4键；</li>
+<li>转aff时增强对空滑条形的平滑优化，并增加soso、sosi、siso、sisi类型；</li>
+<li>支持保留aff节拍线数据；</li>
+<li>bms系增加支持bml后缀；</li>
+<li>bms系增加支持大量header数据标签；</li>
+<li>bms系支持BGA等标签</li>
+<li>bms系支持STOP等标签；</li>
+<li>bms系支持命中音频、命中动画；</li>
+<li>bms系更改轨道类型的判断逻辑；</li>
+<li>bms系支持更多的轨道类型；</li>
+<li>读bms系支持对channel数据追加写法的读取；</li>
+<li>读bms系默认BPM为125；</li>
+<li>读bms系PLAYER标签值为2或4时读取为双人谱面；</li>
+<li>取消已过时的imd转bms系谱面减损转换；</li>
+<li>读写osu支持ComboColour和newCombo；</li>
+<li>读写osu支持sampleSet和hitSound；</li>
+<li>修复读ksh节拍间参数变化时读取不正确的问题；</li>
+<li>读ksh时完善对元数据的读取；</li>
+<li>增加“自动”选项，勾选后其他选项变更时自动应用并更新效果；</li>
+<li>增加“锁定”选项，勾选后读取新谱面时锁定原键位选项；</li>
+<li>增加“对音”功能，勾选后对谱面的时间相关数值以节拍等分线进行对音；</li>
+<li>移除已过时的“自修复”、“自优化”选项；</li>
+<li>“曲速变换”功能增加“1/5x”和“5x”；</li>
+<li>增加“流速变换”功能，用于变更谱面BPM等影响流速的参数，支持2、3、5倍数；</li>
+<li>增加“横轴扩展”、“竖轴扩展”、“纵轴扩展”选项，便于点谱、线谱、面谱、体谱的相互转换；</li>
+<li>增加“横轴消除”、“竖轴消除”、“纵轴消除”选项，增强转谱时的个性化选择；</li>
+<li>增加“虚键扩展”、“虚键消除”，增强带虚拟或自动按键谱面的转换；</li>
+<li>增加“流速扩展”、“流速消除”，增强卷轴式流动谱面的转换；</li>
+<li>增加“变换扩展”、“变换消除”，增强对谱面变换的转换；</li>
+<li>“乱轨”、“乱音”选项由限制随机改为完全随机（完全随机后，建议勾选“无叠键”，“无叉键”选项）；</li>
+<li>“连单键”、“连长键”、“连滑键”的有效距离变更为0.5，增强连接效果，重构判定逻辑；</li>
+<li>对选项进行分类并可选折叠;</li>
+<li>谱面绘图增加对谱面终止时间的绘制；</li>
+<li>谱面绘图增加bms、tja、osu、mc、aff风格及各自判定点、连击数、得分的计算；</li>
+<li>谱面绘图增加时停、时退区间的绘制；</li>
+<li>调整谱面绘图中谱面信息的布局；</li>
+<li>谱面绘图增加绘制节拍数据；</li>
+<li>谱面绘图增加绘制轨道为空时的标记；</li>
+<li>“等级（数量参考）”更名为“量级”，“难度（密度参考）”更名为“密度”，并略微调整计算方法；</li>
+<li>读取带有相应音频文件的mst时绘制谱面图支持同时绘制音频波形；</li>
+<li>（音频文件当前支持wav、ogg、mp3、aac、m4a、m4r）</li>
+<li>增加“时间戳”选项，勾选后谱面绘图绘制时间戳；</li>
+<li>增加“节拍数”选项，勾选后谱面绘图绘制节拍数；</li>
+<li>增加“全音符”选项，勾选后谱面绘图绘制全音符数；</li>
+<li>优化保存谱面预览图的默认文件名；</li>
+<li>图片裁剪缩放功能新增默认*_raw.png（0×0）；</li>
+<li>图片裁剪缩放功能新增*_base.jpg（500×500）；</li>
+<li>图片裁剪缩放功能新增*_base_256.jpg（256×256）；</li>
+<li>修复读取pkg时保存文件默认文件名错误的问题；</li>
+<li>代码的纯洁性改进；</li>
+<li>增加隐藏功能模块；</li>
+<li>隐藏功能“模块wave”增加功能：读取支持的音频文件可绘制音频波形；</li>
+<li>扩展url参数，支持获取隐藏功能模块的权限；</li>
+<li>调整复选框为文本可触发；</li>
+<li>提升文件选择器自定义列表对浏览器的兼容性；</li>
+<li>支持导出谱面文件中包含的资源文件；</li>
+<li>支持ojn（「O2Jam」谱面）文件的读取；</li>
+<li>支持ojm（「O2Jam」音频）文件的读取；</li>
+<li>增加支持mc（「Malody」谱面）ring模式的互转；</li>
+<li>增加支持mc按键的sound；</li>
+<li>支持从剪贴板导入数据（Ctrl+V）；</li>
+<li>取消已过时的导出hex文件功能；</li>
+<li>增加.hex（十六进制文本）和.base64（base64编码文本）文件转为（二进制）文件功能；</li>
+<li>改进图片的延时加载；</li>
+<li>改进zip对无压缩数据的读取；</li>
+<li>支持zip（Deflate）的写入；</li>
+<li>加解密与加解压缩的文件大小支持至32位上限；</li>
+<li>按下Shift键时切换显示预览开关。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20170513.html">rmstZ_20170513.html</a>】</p>
+<ul>
+<li>修正读取osu!mania谱面按键异常的问题；</li>
+<li>修复读取osu长条产生错误的问题；</li>
+<li>修复转aff时可能产生叠键的问题；</li>
+<li>增加等级（数量参考）和难度（密度参考）的计算并在谱面预览图上显示；</li>
+<li>支持2dx（「BeatMania IIDX」音频）文件包的读取；</li>
+<li>支持ipa、apk、osz、mcz等zip（Deflate）文件包的读取；</li>
+<li>生成于“保存”标签的文件内容支持直接拖拽到文件选择器；</li>
+<li>“保存”标签的工具提示显示文件相关信息；</li>
+<li>其他细节调整。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20170416.html">rmstZ_20170416.html</a>】</p>
+<ul>
+<li>增强“无叉键”功能，支持去除滑键的交叉；</li>
+<li>增强“无叠键”功能，支持去除重叠的斜键；</li>
+<li>重构长键、长滑的判定点判断，强化对变速段的精准计算；</li>
+<li>修复转bms长键异常的问题；</li>
+<li>修复“无叠键”无法去除部分重叠单键的问题；</li>
+<li>调整“无叉键”功能，仅去除相叉的键位，保留相交的键位；</li>
+<li>调整转aff时长滑条连接处的弧度；</li>
+<li>调整转aff时长斜键转换错误的问题；</li>
+<li>增加支持vox（「Sound Voltex」谱面）的读取；</li>
+<li>增加支持ksh（「K-Shoot Mania」谱面）的读取；</li>
+<li>选项布局调整。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20170404.html">rmstZ_20170404.html</a>】</p>
+<ul>
+<li>去除“蓝转绿”、“绿转蓝”功能；</li>
+<li>去除“全单键”功能;</li>
+<li>增加“无长键”功能，控制去除谱面内长键并转为单键；</li>
+<li>增加“无单键”功能，控制去除谱面内单键；</li>
+<li>增强“自优化”功能的对音功能；</li>
+<li>调整键位转换的轨道计算；</li>
+<li>修复节拍计算造成无限循环的问题；</li>
+<li>修复0长度长条造成判定点计算错误的问题；</li>
+<li>修复部分情况转换谱面造成混乱的问题；</li>
+<li>重构谱面排序功能；</li>
+<li>重构谱面去重功能；</li>
+<li>重新优化节拍数据和动作数据的管理；</li>
+<li>修复斜键判定点横坐标计算错误的问题；</li>
+<li>增加“无叉键”功能，控制去除包括斜键的长滑交叉；</li>
+<li>改进“无叠键”功能，控制除交叉之外的键位重叠；</li>
+<li>功能选项位置调整；</li>
+<li>增加支持aff（「Arcara」谱面）的互转。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20170325.html">rmstZ_20170325.html</a>】</p>
+<ul>
+<li>修复变速时不改变BPM的问题；</li>
+<li>修复“自修复”功能的一处bug；</li>
+<li>增加“自优化”选项，控制BPM修正、时间戳粘合等操作；</li>
+<li>增加“连单键”选项，将符合条件的单键连为长滑键；</li>
+<li>增加“连长键”选项，将符合条件的长键连为长滑键；</li>
+<li>增加“乱音”选项，一定程度打乱键位的轨道放置；</li>
+<li>修正导出谱面音源信息后缀重复的问题；</li>
+<li>提升转bms的note精度；</li>
+<li>修正导出bms的文件末端；</li>
+<li>导出bms支持至14K；</li>
+<li>对bms、osu部分元数据进行调整；</li>
+<li>使用“严格模式”规范代码，减少运行错误，提高运行效率；</li>
+<li>键位转换支持1K至18K；</li>
+<li>数据结构重造，支持多谱面文件；</li>
+<li>对imd部分非关键数据不作修正；</li>
+<li>扩展url参数，支持功能检测、配置更改、数据输入、数值显示、默认值变更等，详情请参阅?help=all；</li>
+<li>增加作品与作者的跳转链接；</li>
+<li>「节奏大师」官方谱面批量下载功能优化，可独立下载音乐资源；</li>
+<li>　（注：TableCom.zip当前最新链接为<a href="http://game.ds.qq.com/Com_TableCom_Android_Bin/TableComBin.zip">http://game.ds.qq.com/Com_TableCom_Android_Bin/TableComBin.zip</a>）</li>
+<li>增加支持tja（「太鼓次郎」谱面）taiko模式、jube模式的互转；</li>
+<li>　（注：双人谱面分为两个谱面，谱面分歧只取最高难度）</li>
+<li>增加支持mc（「Malody」谱面）key模式、step模式、dj模式的互转；</li>
+<li>增加支持mc（「Malody」谱面）taiko模式的互转；</li>
+<li>增加支持mc（「Malody」谱面）catch模式的互转；</li>
+<li>增加支持mc（「Malody」谱面）pad模式的互转；</li>
+<li>部分导出格式文件名标记模式；</li>
+<li>取消已过时的bms键位置换功能；</li>
+<li>新增支持bme的互转；</li>
+<li>　（注：支持3、5、14K的键位）</li>
+<li>新增支持pms（「Pop'n Music」谱面）的互转；</li>
+<li>　（注：支持3、5、9、18K的键位）</li>
+<li>完善xml（「乐动时代」谱面）的互转；</li>
+<li>修复部分谱面转mde产生坐标错误的问题；</li>
+<li>谱面绘图去除边框颜色叠加；</li>
+<li>png、html预览图支持多谱面合并；</li>
+<li>页面初始尺寸针对手机版本进行适配；</li>
+<li>导出的html预览图初始尺寸针对手机版本进行适配；</li>
+<li>增加“蓝转绿”选项，将单键转为单轨滑键；</li>
+<li>增加“绿转蓝”选项，将单轨滑键转为单键；</li>
+<li>增加“连滑键”选项，将符合条件的单键与长键、长滑键相连；</li>
+<li>增加“转斜键”选项，将符合条件的长滑键转为斜键；</li>
+<li>增加“无斜键”选项，将斜键转为长滑键；</li>
+<li>增加“无叠键”选项，按相应规则删去重叠的按键；</li>
+<li>优化谱面绘图长滑键节点的绘制；</li>
+<li>优化谱面绘图斜键的绘制；</li>
+<li>优化imd长滑键判定点的计算；</li>
+<li>重构谱面bug优化功能；</li>
+<li>图片裁剪缩放功能新增_cover_hd.png（210X98）；</li>
+<li>图片裁剪缩放功能智能变更保存文件名；</li>
+<li>增加支持osu（「osu!」谱面）taiko模式的互转；</li>
+<li>增加支持osu（「osu!」谱面）ctb模式的互转；</li>
+<li>增加支持osu（「osu!」谱面）osu模式的互转；</li>
+<li>完善osu（「osu!」谱面）mania模式的互转。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20161119.html">rmstZ_20161119.html</a>】</p>
+<ul>
+<li>修复图片相关功能失效的问题；</li>
+<li>修正乐动达人谱面长条持续时间错误；</li>
+<li>优化保存文件名的后缀；</li>
+<li>谱面绘图增强识别全音符节拍线；</li>
+<li>修复谱面绘图长度不足的问题；</li>
+<li>修正谱面绘图的相关参数</li>
+<li>“自修复”功能改进谱面的长键、长滑键粘合；</li>
+<li>“自修复”功能增强修复谱面的长滑键丢失；</li>
+<li>“自修复”功能增加对长键、长滑键末端的时间戳粘合；</li>
+<li>优化时间戳粘合的判定准确度；</li>
+<li>修复bin文件的十六进制错误读取的问题；</li>
+<li>更改imd、bin的十六进制文件扩展名为hex；</li>
+<li>修复读取元数据为空值的bug；</li>
+<li>完善bms的元数据；</li>
+<li>导出bms中的WAV标签默认mp3后缀；</li>
+<li>修改mde转落谱时键数默认为6K；</li>
+<li>增强读取mde的容错处理；</li>
+<li>优化mde长滑键与下落式谱面长滑键的转化；</li>
+<li>支持将谱面转为mde；</li>
+<li>键位支持转换3K至18K。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20160915.html">rmstZ_20160915.html</a>】</p>
+<ul>
+<li>修复读取txt失败的问题；</li>
+<li>修复imd长条排序错误的问题；</li>
+<li>完善“自修复”功能，经转换或修改的谱面自动自修复；</li>
+<li>“自修复”功能增加时间戳粘合节拍线；</li>
+<li>支持谱面键位镜像翻转；</li>
+<li>支持谱面2、3倍变速；</li>
+<li>支持键位的简单扩增和收缩（3K至7K）。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20160624.html">rmstZ_20160624.html</a>】</p>
+<ul>
+<li>支持osu全模式转下落式；</li>
+<li>转谱osu时AudioFilename标签默认为.mp3的扩展名，如有其他需要再自行更改；</li>
+<li>修复长键相关计算引起的无限循环bug；</li>
+<li>支持节奏大师星动模式转下落式，可选3至8K。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20160408.html">rmstZ_20160408.html</a>】</p>
+<ul>
+<li>增加对osu的Mode不为3（mania模式）的提示；</li>
+<li>增加对osu的TimingPoints数据去重处理；</li>
+<li>优化对osu的元数据读取；</li>
+<li>优化对bms的版本识别；</li>
+<li>修正格式列表的显示逻辑；</li>
+<li>对滑键的轨道重合适当兼容（有滑键轨道重合时转谱有损耗）；</li>
+<li>优化滑键的相关连击判定顺序。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20151028.html">rmstZ_20151028.html</a>】</p>
+<ul>
+<li>完善字节序的兼容性；</li>
+<li>优化一处二进制文件转Hex文本的性能问题；</li>
+<li>优化文件名重命名功能，并对谱面相关文件的文件名增加键位及难度后缀；</li>
+<li>更改bms的BPM精度；</li>
+<li>修正osu字段的默认值；</li>
+<li>转谱尽可能保留元信息；</li>
+<li>提升ANSI文本读取的兼容性，扩充ANSI编码表至11299；</li>
+<li>格式转换的性能优化；</li>
+<li>bin→list补充增加mrock_song_client；</li>
+<li>优化mde转换流程；</li>
+<li>优化bin转换流程；</li>
+<li>bin文件可以保存为Hex文本txt并导回；</li>
+<li>Hex文本txt的文件名增加类型标识，并对读取做相关识别处理；</li>
+<li>内容界面显示base64时自动换行；</li>
+<li>修改并增加url参数；</li>
+<li>底层函数代码大面积优化；</li>
+<li>选项布局调整；</li>
+<li>调整绘制谱面的最小宽度；</li>
+<li>选项“去除Bug”更名“自修复”，增加对重合单、长键的去除，增加对滑、长键衔接的修复；</li>
+<li>键位限制的选项改为自定义选择谱面键位（使用该功能应同时勾选“自修复”选项）。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20150716.html">rmstZ_20150716.html</a>】</p>
+<ul>
+<li>修复转bms的BPM大于255时的标记错误；</li>
+<li>改善xml（「乐动时代」）转谱的性能；</li>
+<li>通过局部变速对齐xml谱面的时间戳；</li>
+<li>读取错误或不支持的谱面时重置界面；</li>
+<li>负数时间戳时长部分计入谱面总时长；</li>
+<li>优化“去除bug”的BPM自动更正功能；</li>
+<li>读取imd节拍部分进行节拍补全；</li>
+<li>增加osu（「osu!」〈mania模式〉谱面）互转；</li>
+<li>　（注：osu!mania下落速度的改变采用BPM变速）</li>
+<li>通过变速和时间戳偏移取消负数时间戳；</li>
+<li>修复转bms的键位比例判定bug。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20150707.html">rmstZ_20150707.html</a>】</p>
+<ul>
+<li>ImdToImg：</li>
+<li>　修复时长错误导致图片绘制失败的Bug；</li>
+<li>　取消自动对时间戳粘合节拍线；</li>
+<li>选项“去除Bug”增加：时长根据Beat和Action进行修正、根据时长等量增加Beat；</li>
+<li>修复Base64解码的Bug；</li>
+<li>增强读取txt的容错性；</li>
+<li>生成bms的信息修改（略去空信息，增加#TIME记录总时长信息）；</li>
+<li>bms系列支持扩展名.bms,.bme,.bml,.pms；</li>
+<li>读取xml文件增加对文件头的兼容处理；</li>
+<li>选项流程优化；</li>
+<li>增加选项“限制3键”、“限制4键”，并与“限制6键”一起，对相应Action进行转换（无衔接长滑键转为长键）；</li>
+<li>增加xml（「乐动达人」谱面）互转。</li>
+<li>增加xml（「乐动时代」谱面）互转。</li>
+<li>增加额外小功能以迂回实现「节奏大师」官方谱面批量下载：</li>
+<li>　①自行下载最新的TableCom.zip并解压获得mrock_song_client_android和mrock_papasong_client，然后自行建立RM文件夹；</li>
+<li>　②使用rmstZ分别打开mrock_song_client_android和mrock_papasong_client并保存对应的.list文件和.bat文件到RM文件夹内；</li>
+<li>　③运行★res_all.bat后，将生成的★res_new.txt全部链接复制到IDM等下载工具并下载到RM文件夹；</li>
+<li>　④批量下载到RM文件夹完毕后执行谱面移动，移动结束后步骤完成，全部谱面文件位于res/song/文件夹内。</li>
+<li>　注：上述步骤请操作于Windows操作系统，TableCom.zip当前最新链接为<a href="http://game.ds.qq.com/Com_TableCom_Android/TableCom.zip">http://game.ds.qq.com/Com_TableCom_Android/TableCom.zip</a>。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20150619.html">rmstZ_20150619.html</a>】</p>
+<ul>
+<li>ImdToImg：</li>
+<li>　时间戳根据节拍线进行粘合；</li>
+<li>　改进combo判定；</li>
+<li>增加支持url参数；</li>
+<li>选项逻辑变更，性能优化；</li>
+<li>增加选项“去除Bug”（时间戳去除0ms，单键去除方向，节拍和动作去重、排序、重新计数，节拍BPM重计算）；</li>
+<li>增加选项“无滑键”（滑键与长滑键在Cobmo不变的情况下更改为对应的单键与长键）；</li>
+<li>增加选项“全单键”（所有按键在Action不变的情况下更改为对应的单键）；</li>
+<li>优化bms节拍数的读取；</li>
+<li>增加bms根据节拍十六分对时间戳粘合优化；</li>
+<li>修复bms类型识别错误导致按键不能正常读取的bug；</li>
+<li>读取bms去除note由时间戳小于2400ms改为小于600ms；</li>
+<li>增加imd转bms；</li>
+<li>对于bms的1000节拍限制，使用节拍变换的方式予以优化，理论上支持无限长的时间。</li>
+<li>从节拍、轨道、按键上减小bms互转的损耗：</li>
+<li>（互转bms轨道变更：</li>
+<li>　7K　0 1 2 3 4 5 6</li>
+<li>　4K　  0 1   2 3</li>
+<li>　5K　  0 1 2 3 4</li>
+<li>　6K　0 1 2   3 4 5</li>
+<li>互转bms按键变更：</li>
+<li>
+<pre><code class="code-highlight"><span class="code-line line-number" line="1">imd  bms
+</span></code></pre>
+</li>
+<li>
+<pre><code class="code-highlight"><span class="code-line line-number" line="1"> 00  A8     单
+</span></code></pre>
+</li>
+<li>
+<pre><code class="code-highlight"><span class="code-line line-number" line="1"> 01  A8±05 单
+</span></code></pre>
+</li>
+<li>
+<pre><code class="code-highlight"><span class="code-line line-number" line="1"> 02  A8     长
+</span></code></pre>
+</li>
+<li>
+<pre><code class="code-highlight"><span class="code-line line-number" line="1"> 61         单
+</span></code></pre>
+</li>
+<li>
+<pre><code class="code-highlight"><span class="code-line line-number" line="1"> 62  B8     长
+</span></code></pre>
+</li>
+<li>
+<pre><code class="code-highlight"><span class="code-line line-number" line="1"> 21         单
+</span></code></pre>
+</li>
+<li>(61)22  C8±05 长</li>
+<li>(21)22  D8±05 长</li>
+<li>
+<pre><code class="code-highlight"><span class="code-line line-number" line="1"> A1  E8±05 单
+</span></code></pre>
+</li>
+<li>(61)A2  E8±05 长</li>
+<li>(21)A2  F8±05 长</li>
+<li>　符合上述条件则使用减损转换）。</li>
+</ul>
+<hr>
+<ul>
+<li>【<a href="rmstZ_20150602.html">rmstZ_20150602.html</a>】</li>
+<li>代码重构，优化性能；</li>
+<li>增加bms转imd：</li>
+<li>　bms转imd兼容BM98、PMS、BMS1.2、BMS1.3+等标准，imd转bms依照BMS1.3+的标准，<a href="http://fileformats.wikia.com/wiki/Be-Music_Script%EF%BC%9B">http://fileformats.wikia.com/wiki/Be-Music_Script；</a></li>
+<li>　将bms的最初的WAV标签时间点作为imd的起始时间戳；</li>
+<li>　去除起始时间戳小于2400ms的note；</li>
+<li>　格式互转为有损转换，转换结果仅做研究交流测试用。</li>
+<li>ImdToImg：</li>
+<li>　增加对读取imd排序、去重、计数的兼容（自动除bug）；</li>
+<li>　增强对负数时间戳的支持；</li>
+<li>　优化长键判定；</li>
+<li>其他细节改进。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20150511.html">rmstZ_20150511.html</a>】</p>
+<ul>
+<li>细节优化；</li>
+<li>实现图片的居中裁剪缩放（未实现官方png编码）</li>
+<li>★bmp、jpg、gif、png</li>
+<li>　→.png（480×320）</li>
+<li>　→_title_ipad.png（140×60）</li>
+<li>　→_ipad.png（1024×768）</li>
+<li>　→_title_140_90.png（140×90）</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20150505.html">rmstZ_20150505.html</a>】</p>
+<ul>
+<li>修复txt转imd的扩展名错误；</li>
+<li>修复长滑键（中继）连击数顺序标记错误；</li>
+<li>节拍线改为虚线区分；</li>
+<li>新增xml(mde)转mde；</li>
+<li>转变关系整合：</li>
+<li>★bin</li>
+<li>　→xml(bin)</li>
+<li>　→html(table)</li>
+<li>★xml(bin)</li>
+<li>　→bin</li>
+<li>　→html(table)</li>
+<li>★mde</li>
+<li>　→xml(mde)</li>
+<li>★xml(mde)</li>
+<li>　→mde</li>
+<li>★imd</li>
+<li>　→png</li>
+<li>　→html(img)</li>
+<li>　→txt(imd)</li>
+<li>★txt(imd)</li>
+<li>　→png</li>
+<li>　→html(img)</li>
+<li>　→imd</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20150415.html">rmstZ_20150415.html</a>】</p>
+<ul>
+<li>代码优化；</li>
+<li>标准化时间显示格式；</li>
+<li>imd转img增加满分与速率两项；</li>
+<li>增加imd转html，可选4档宽度与4档速率（请注意考虑你设备的处理能力）；</li>
+<li>轻微bug修复。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20150407.html">rmstZ_20150407.html</a>】</p>
+<ul>
+<li>修复导出表格html的中文乱码；</li>
+<li>修复键位判断的漏洞；</li>
+<li>去除谱面键位最高为6的限制；</li>
+<li>轨道线颜色加深；</li>
+<li>imd转出的txt可以导回为imd。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20150331.html">rmstZ_20150331.html</a>】</p>
+<ul>
+<li>优化代码；</li>
+<li>改进错误提示；</li>
+<li>.xml与.bin文件可以转化并保存为html表格。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20150329.html">rmstZ_20150329.html</a>】</p>
+<ul>
+<li>修复mrock_song_client_android.bin的读取错误；</li>
+<li>修复mrock_match_client.bin的读取错误；</li>
+<li>修复mrock.scorebuy_client.xml的写入错误；</li>
+<li>增加支持读取mrock_song_client.bin；</li>
+<li>增加支持读取mrock_scoreexchange_client.bin；</li>
+<li>增加支持读取mrock_songlevel_client.bin；</li>
+<li>bin转xml与xml转bin改进类型识别；</li>
+<li>增加功能xml转bin，实现计数校验和Hsah校验（改bin如果严格按照格式可以任意增加条数了），支持以下文件：</li>
+<li>　errno_main_client.xml</li>
+<li>　mrock.active_client.xml</li>
+<li>　mrock.character_client.xml</li>
+<li>　mrock.characterproperty_client.xml</li>
+<li>　mrock.floornode_client.xml</li>
+<li>　mrock.floorreward_client.xml</li>
+<li>　mrock.innerpublicnotify_client.xml</li>
+<li>　mrock.innerrace_client.xml</li>
+<li>　mrock.marketact_client.xml</li>
+<li>　mrock.mission_client.xml</li>
+<li>　mrock.scorebuy_client.xml</li>
+<li>　mrock.scoreexchange_client.xml</li>
+<li>　mrock.surviveact_client.xml</li>
+<li>　mrock.timelimitcharacter_client.xml</li>
+<li>　mrock_buynew_client.xml</li>
+<li>　mrock_match_client.xml</li>
+<li>　mrock_match_division_client.xml</li>
+<li>　mrock_papasong_client.xml</li>
+<li>　mrock_questconfig_client.xml</li>
+<li>　mrock_room_client.xml</li>
+<li>　mrock_scoreexchange_client.xml</li>
+<li>　mrock_song_client.xml</li>
+<li>　mrock_song_client_android.xml</li>
+<li>　mrock_songlevel_client.xml</li>
+<li>　mrock_SongPkg_client.xml</li>
+<li>　mrock_SysParam_client.xml</li>
+<li>　mrock_txt_client.xml。</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20150328.html">rmstZ_20150328.html</a>】</p>
+<ul>
+<li>文件的打开增加类型限定；</li>
+<li>文件的保存改为使用File API，支持大文件的保存；</li>
+<li>优化API支持的提示；</li>
+<li>修复mde的Bug；</li>
+<li>针对UC浏览器取消其不支持的保存功能；</li>
+<li>安卓系统推荐使用火狐浏览器</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20150326.html">rmstZ_20150326.html</a>】</p>
+<ul>
+<li>实现内存的优化与速度的提升；</li>
+<li>兼容文本文件的打开（虽然没什么用）；</li>
+</ul>
+<hr>
+<p>　【<a href="rmstZ_20150325.html">rmstZ_20150325.html</a>】</p>
+<ul>
+<li>初始版本</li>
+</ul>
+<hr>
+<p>　【<a href="BinToXml_20150324.html">BinToXml_20150324.html</a>】</p>
+<ul>
+<li>代码聚合；</li>
+<li>支持的格式增加；</li>
+<li>暂不支持的格式进行提示</li>
+</ul>
+<hr>
+<p>　【<a href="MdeToXml_20150322.html">MdeToXml_20150322.html</a>】</p>
+<ul>
+<li>代码改进</li>
+</ul>
+<hr>
+<p>　【<a href="BinToXml_20150322.html">BinToXml_20150322.html</a>】</p>
+<ul>
+<li>新增支持：</li>
+<li>　mrock.character_client.bin</li>
+<li>　mrock.characterproperty_client.bin</li>
+<li>　mrock.floornode_client.bin</li>
+<li>　mrock.floorreward_client.bin</li>
+<li>　mrock.innerpublicnotify_client.bin</li>
+<li>　mrock.innerrace_client.bin</li>
+<li>　mrock.marketact_client.bin</li>
+<li>　mrock.mission_client.bin</li>
+<li>　mrock.scorebuy_client.bin</li>
+<li>　mrock.scoreexchange_client.bin</li>
+<li>　mrock.surviveact_client.bin</li>
+</ul>
+<hr>
+<p>　【<a href="ImdToImg_20150320.html">ImdToImg_20150320.html</a>】</p>
+<ul>
+<li>多项功能更新；</li>
+<li>对非标准imd的适当容错；</li>
+<li>注：当图片过大过于复杂时，使用“保存”会使页面崩溃，这时要保存图片请自行“右键——复制图片”</li>
+</ul>
+<hr>
+<p>　【<a href="BinToXml_20150318.html">BinToXml_20150318.html</a>】</p>
+<ul>
+<li>函数的优化和改进；</li>
+<li>新增支持</li>
+<li>　errno_main_client.bin</li>
+<li>　mrock.active_client.bin</li>
+</ul>
+<hr>
+<p>　【<a href="MdeToXml_20150317.html">MdeToXml_20150317.html</a>】</p>
+<ul>
+<li>初始版本</li>
+</ul>
+<hr>
+<p>　【<a href="BinToXml_20150315.html">BinToXml_20150315.html</a>】</p>
+<ul>
+<li>初始版本</li>
+</ul>
+<hr>
+<p>　【<a href="ImdToImg_20150307.html">ImdToImg_20150307.html</a>】</p>
+<ul>
+<li>初始版本</li>
+</ul>
+</blockquote>
+  </div>
+  </body>
+</html>
